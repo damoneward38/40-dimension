@@ -1,0 +1,57 @@
+<!-- PAGE: GALLERY -->
+<section id="page-gallery" class="page">
+    <div class="section-container">
+        <div class="upload-hero" onclick="document.getElementById('file-input').click()">
+            <div class="upload-icon">✦</div>
+            <h2 style="font-size: 32px; font-family: 'Orbitron'; margin-bottom: 10px;">Integrate New Asset</h2>
+            <p style="color: var(--sub);">Drop your high-fidelity renders here or click to browse.</p>
+            <input type="file" id="file-input" hidden accept="image/*" multiple onchange="handleUpload(event, 'image')">
+        </div>
+
+        <div class="grid-header">
+            <div>
+                <div class="hero-badge" style="margin-bottom: 10px;">Asset Database</div>
+                <h2 class="grid-title">Interactive Renders</h2>
+            </div>
+        </div>
+        <div class="art-grid" id="art-grid"></div>
+    </div>
+</section>
+
+<!-- PAGE: VIDEOS -->
+<section id="page-videos" class="page">
+    <div class="section-container">
+        <div class="upload-hero" onclick="document.getElementById('video-input').click()" style="border-color: var(--c1);">
+            <div class="upload-icon" style="filter: drop-shadow(0 0 10px var(--c1));">🎬</div>
+            <h2 style="font-size: 32px; font-family: 'Orbitron'; margin-bottom: 10px;">Upload Motion</h2>
+            <p style="color: var(--sub);">MP4 or WebM — Auto-wraps in 3D perspective.</p>
+            <input type="file" id="video-input" hidden accept="video/*" multiple onchange="handleUpload(event, 'video')">
+        </div>
+
+        <div class="grid-header">
+            <div>
+                <div class="hero-badge" style="margin-bottom: 10px; color: var(--c1);">Motion Data</div>
+                <h2 class="grid-title">Dynamic Volumes</h2>
+            </div>
+        </div>
+        <div class="art-grid" id="video-grid"></div>
+    </div>
+</section>
+
+<!-- PAGE: ABOUT -->
+<section id="page-about" class="page">
+    <div class="section-container" style="max-width: 900px; text-align: center;">
+        <div class="hero-badge">Engineering Documentation</div>
+        <h2 class="hero-title" style="font-size: 60px;"><span>The Core Engine</span></h2>
+        <div style="background: var(--bg2); padding: 40px; border-radius: 30px; border: 1px solid var(--border); text-align: left; line-height: 1.8; color: var(--sub);">
+            <p style="margin-bottom: 20px;">DIMENSION utilizes a proprietary <strong>Spatial CSS Transformation Layer</strong>. Unlike traditional WebGL which renders to a flat canvas, Dimension applies 3D matrices directly to DOM elements.</p>
+            <p style="margin-bottom: 20px;">When you hover over a card, our <code>tiltHandler</code> calculates the normalized vector between the mouse position and the element's center. This data is fed into a <code>matrix3d</code> calculation that simulates Z-depth and parallax.</p>
+            <ul style="list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;">
+                <li style="color: #fff;"><strong>✦ Real-time Raycasting:</strong> Simulated via CSS drop-shadows that react to tilt angle.</li>
+                <li style="color: #fff;"><strong>✦ Asset Persistence:</strong> LocalStorage integration for offline session recovery.</li>
+                <li style="color: #fff;"><strong>✦ Performance:</strong> 120FPS rendering via hardware-accelerated transforms.</li>
+                <li style="color: #fff;"><strong>✦ Zero Latency:</strong> Immediate asset wrap on upload.</li>
+            </ul>
+        </div>
+    </div>
+</section>
